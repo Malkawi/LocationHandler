@@ -14,6 +14,7 @@
  */
 package org.oscim.app;
 
+import org.oscim.app.App;
 import org.oscim.core.GeoPoint;
 import org.oscim.core.MapPosition;
 import org.oscim.core.MercatorProjection;
@@ -144,7 +145,8 @@ public class LocationHandler {
 			}
 			DrawableOverlay l =  new  DrawableOverlay(App.map);
 	
-			
+			if( currentLocation == null ){ // no location has been accuqired 
+				Toast.makeText(App.map.getContext(), "No location info avaible", Toast.LENGTH_SHORT).show();
 			
 	l.setLat(((float)mapPosition.lat));
 	l.setLog((float)mapPosition.lon);
